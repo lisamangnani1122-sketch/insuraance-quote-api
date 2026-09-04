@@ -36,6 +36,11 @@ def get_quote():
         "coverage_type": coverage_type,
         "monthly_quote": quote
     })
+@app.route('/coverage-types', methods=['GET'])
+def coverage_types():
+    return jsonify({
+        "available_types": ["basic", "standard", "premium"]
+    })
 
 @app.route('/health', methods=['GET'])
 def health():
